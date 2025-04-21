@@ -50,18 +50,23 @@ func add_score(value):
 	score += value
 	score_updated.emit(score)
 
-func take_damage(damage: int, source_position) -> void:
-	current_health = max(current_health - damage, 0)
-	was_damage = true
-	
+func heal(amount: int):
+	current_health = min(current_health + amount, max_health)
+	update_apeerance()
+
+func update_apeerance():
 	var index = current_health - 1
 	sprite.texture = textures[index]
-
-	var knockback_direction = global_position - source_position
-	velocity = knockback_direction * 30
-
+	
+func take_damage(damage: int, source_position) -> void:
+	current_health = max(current_health - damage, 0)
 	if current_health <= 0:
 		die()
+
+	was_damage = true
+	update_apeerance()
+	var knockback_direction = global_position - source_position
+	velocity = knockback_direction * 30
 
 func die():
 	was_dead.emit(true)

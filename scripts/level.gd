@@ -12,7 +12,10 @@ func _ready():
 	# Player take damage by Spike
 	for spike in get_tree().get_nodes_in_group("spike"):
 		spike.was_hit.connect(player.take_damage)
+	# Show dead message when player is dead
 	player.was_dead.connect(ui.show_dead_message)
+	for medicine in get_tree().get_nodes_in_group("medicine"):
+		medicine.was_taken.connect(player.heal)
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):

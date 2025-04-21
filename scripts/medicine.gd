@@ -1,8 +1,8 @@
 extends Area2D
 
-var health: int = 3
-
 signal was_taken(health: int)
+
+var health: int = 3
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
