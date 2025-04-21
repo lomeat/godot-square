@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckd28hcxav1t8"]
+[gd_scene load_steps=9 format=3 uid="uid://ckd28hcxav1t8"]
 
 [ext_resource type="PackedScene" uid="uid://dicc10w4el2as" path="res://scenes/player.tscn" id="1_m68wc"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_rau63"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bav1e2vbls4oq" path="res://scenes/orange-coin.tscn" id="6_1lkl8"]
 [ext_resource type="PackedScene" uid="uid://l8e2r6djqfyt" path="res://scenes/ui.tscn" id="7_8la2a"]
 [ext_resource type="PackedScene" uid="uid://b1c7kjle7muat" path="res://scenes/diamond-coin.tscn" id="8_e7lx7"]
-[ext_resource type="PackedScene" uid="uid://clw353lqmf50" path="res://scenes/spike.tscn" id="9_0rxs2"]
-[ext_resource type="PackedScene" uid="uid://cic54shodt4nl" path="res://scenes/medicine.tscn" id="10_wtgtx"]
 
 [node name="GameController" type="Node2D"]
 script = ExtResource("1_rau63")
@@ -67,24 +65,3 @@ position = Vector2(64, 96)
 
 [node name="DiamondCoin2" parent="Coins" instance=ExtResource("8_e7lx7")]
 position = Vector2(320, 800)
-
-[node name="Spike" parent="." instance=ExtResource("9_0rxs2")]
-position = Vector2(160, 448)
-
-[node name="Spike5" parent="." instance=ExtResource("9_0rxs2")]
-position = Vector2(256, 192)
-
-[node name="Spike2" parent="." instance=ExtResource("9_0rxs2")]
-position = Vector2(544, 864)
-
-[node name="Spike4" parent="." instance=ExtResource("9_0rxs2")]
-position = Vector2(736, 864)
-
-[node name="Spike3" parent="." instance=ExtResource("9_0rxs2")]
-position = Vector2(480, 864)
-
-[node name="Area2D" parent="." instance=ExtResource("10_wtgtx")]
-position = Vector2(448, 480)
-
-[node name="Area2D2" parent="." instance=ExtResource("10_wtgtx")]
-position = Vector2(192, 800)
