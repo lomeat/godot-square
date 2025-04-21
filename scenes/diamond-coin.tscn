@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1c7kjle7muat"]
+
+[ext_resource type="Script" path="res://scripts/diamond-coin.gd" id="1_uutcw"]
+[ext_resource type="Texture2D" uid="uid://duwwis5wylutc" path="res://sprites/coin2.png" id="2_elji8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymm21"]
+radius = 32.0
+
+[node name="DiamondCoin" type="Area2D" groups=["coin"]]
+script = ExtResource("1_uutcw")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_elji8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_ymm21")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

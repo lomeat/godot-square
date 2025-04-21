@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bav1e2vbls4oq"]
+
+[ext_resource type="Script" path="res://scripts/orange-coin.gd" id="1_2uehf"]
+[ext_resource type="Texture2D" uid="uid://bdi6yn4013syo" path="res://sprites/coin.png" id="1_4vk00"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymm21"]
+radius = 32.0
+
+[node name="OrangeCoin" type="Area2D" groups=["coin"]]
+script = ExtResource("1_2uehf")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4vk00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_ymm21")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
